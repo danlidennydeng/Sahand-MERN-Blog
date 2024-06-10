@@ -51,3 +51,25 @@ in client directory
 Step 1. npm i flowbite-react
 
 then follow step 2 as well on the webpage since it is the latest update, instead on the video.
+
+---
+
+For API
+
+go to Sahand-MERN directory and
+npm init -y
+
+"type": "module",
+"scripts": {
+"dev": "nodemon api/index.js",
+"start": "node api/index.js"
+},
+in package.json
+
+node api/index
+
+npm i nodemon
+
+## npm run dev
+
+move .gitignore to Sahand-MERN directory
