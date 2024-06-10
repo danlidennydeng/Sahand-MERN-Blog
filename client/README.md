@@ -40,4 +40,14 @@ control + shift + L # select multiple same words for editing.
 
 http://localhost:5173/
 
-npm i react-router-dom
+## npm i react-router-dom
+
+1. Use with Vite - Flowbite React
+   https://flowbite-react.com/docs/guides/vite
+
+Install Flowbite React
+
+in client directory
+Step 1. npm i flowbite-react
+
+then follow step 2 as well on the webpage since it is the latest update, instead on the video.
