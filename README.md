@@ -84,3 +84,7 @@ HOcdTj6Jd0SelcRg
 mongodb+srv://danlidennydeng:HOcdTj6Jd0SelcRg@cluster0.x4ougqw.mongodb.net/
 
 npm i dotenv
+
+---
+
+npm i bcryptjs
