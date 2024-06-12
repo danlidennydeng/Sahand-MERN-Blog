@@ -40,6 +40,9 @@ control + shift + L # select multiple same words for editing.
 
 http://localhost:5173/
 
+in client folder
+npm run dev
+
 ## npm i react-router-dom
 
 1. Use with Vite - Flowbite React
