@@ -91,3 +91,7 @@ npm i dotenv
 ---
 
 npm i bcryptjs
+
+---
+
+npm i jsonwebtoken
