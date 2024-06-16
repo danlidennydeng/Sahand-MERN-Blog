@@ -55,15 +55,34 @@ export const signin = async (req, res, next) => {
 
     const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET);
 
-    const { password: pass, ...rest } = validUser._doc;
-    // const { password, username, ...rest } = validUser._doc; //did not work from ChatGPT
+    // const { password: pass, ...rest } = validUser._doc;
 
-    res
-      .status(200)
-      .cookie("access_token", token, {
-        httpOnly: true,
-      })
-      .json(rest);
+    // this from video only destructure one field, password, instead of multiple fields.
+
+    //     res
+    //       .status(200)
+    //       .cookie("access_token", token, {
+    //         httpOnly: true,
+    //       })
+    //       .json(rest);
+    //   } catch (error) {
+    //     next(error);
+    //   }
+    // };
+
+    if (validUser && validUser._doc) {
+      // Destructure and exclude password and email from chatGPT
+      const { password, email, ...rest } = validUser._doc;
+
+      return res
+        .status(200)
+        .cookie("access_token", token, {
+          httpOnly: true,
+        })
+        .json(rest);
+    } else {
+      return next(errorHandler(500, "User data structure is invalid."));
+    }
   } catch (error) {
     next(error);
   }
