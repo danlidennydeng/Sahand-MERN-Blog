@@ -94,4 +94,10 @@ npm i bcryptjs
 
 ---
 
-npm i jsonwebtoken
+## npm i jsonwebtoken
+
+npm install @reduxjs/toolkit
+npm install react-redux
+#for managing signin state
+
+npm i redux-persist
