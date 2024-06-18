@@ -101,3 +101,14 @@ npm install react-redux
 #for managing signin state
 
 npm i redux-persist
+
+---
+
+OAuth with Google
+
+search for firebase
+https://firebase.google.com/
+
+click on console at left of songdeng2008@gmail.com
+
+/client, npm install firebase
