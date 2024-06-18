@@ -81,7 +81,7 @@ export const signin = async (req, res, next) => {
         })
         .json(rest);
     } else {
-      return next(errorHandler(500, "User data structure is invalid."));
+      return next(errorHandler(500, "User data destructure is invalid."));
     }
   } catch (error) {
     next(error);
