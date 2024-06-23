@@ -112,3 +112,29 @@ https://firebase.google.com/
 click on console at left of songdeng2008@gmail.com
 
 /client, npm install firebase
+
+---
+
+firebase storage for pictures
+u.s. central
+
+rules_version = '2';
+
+// Craft rules based on data in your Firestore database
+// allow write: if firestore.get(
+// /databases/(default)/documents/users/$(request.auth.uid)).data.isAdmin;
+service firebase.storage {
+match /b/{bucket}/o {
+match /{allPaths=\*_} {
+allow read;
+allow write: if request.resource.size < 2 _ 1024 _ 1024 &&
+request.resource.contentType.matches("image/._")
+}
+}
+}
+
+---
+
+search for "react circular progress bar"
+
+npm install --save react-circular-progressbar //under client folder
