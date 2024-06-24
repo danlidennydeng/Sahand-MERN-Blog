@@ -137,4 +137,6 @@ request.resource.contentType.matches("image/._")
 
 search for "react circular progress bar"
 
-npm install --save react-circular-progressbar //under client folder
+## npm install --save react-circular-progressbar //under client folder
+
+/Sahand-MERN-Blog$ npm i cookie-parser
