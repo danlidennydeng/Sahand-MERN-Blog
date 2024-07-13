@@ -54,7 +54,7 @@ export default function SignIn() {
       if (res.ok) {
         dispatch(signInSuccess(data));
 
-        navigate("/");
+        navigate("/dashboard?tab=profile");
       }
     } catch (error) {
       // setErrorMessage(error.message);

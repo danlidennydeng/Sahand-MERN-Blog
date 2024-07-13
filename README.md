@@ -14,9 +14,23 @@ npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memo
 npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
 npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
 
-## #not fixed yet. leave it for now, Jun 8, 2024
+//not fixed yet. leave it for now, Jun 8, 2024
 
----
+=========================================
+
+Future Improvement:
+
+1. When a user sign up, validate on both front-end and back-end. Perhaps back-end first.
+
+2. First Name(cannot change, not unique), Last Name, Email(cannot changed. But unique), Birth Year(cannot change), State(cannot change),( County, city later)
+
+3. React Hook Form or React Fomik? React Hook Form seems newer with hooks without class function.(later)
+
+4. No "signout" on sidebar. ask him to write and pull up maybe 3 or 5 posts by others. 30% vs 70%
+
+5. "Delete Account" should be difficult to be found. "Welcome! Please double check your information here. If there are some typos when you signup, please delete your account at very very bottom. Then signup a new one."
+
+==========================================
 
 https://tailwindcss.com/docs/guides/vite
 
