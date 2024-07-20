@@ -154,3 +154,5 @@ search for "react circular progress bar"
 ## npm install --save react-circular-progressbar //under client folder
 
 /Sahand-MERN-Blog$ npm i cookie-parser
+
+~/Sahand-MERN-Blog/client$ npm install react-quill --save
