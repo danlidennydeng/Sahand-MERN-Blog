@@ -6,6 +6,7 @@ import {
   Alert,
   Modal,
   ModalBody,
+  FileInput,
 } from "flowbite-react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -32,8 +33,8 @@ export default function CreatePost() {
           required
           rows={6}
         />
-        <Select id="tag" required>
-          {/* <option value="unscope">Select a tag</option> */}
+        <Select id="category" required>
+          {/* <option value="unscope">Select a category</option> */}
           <option value="state">Statewide Issues</option>
           <option value="nation">Nationwide Issues</option>
           {/* <option value="state" disable={true}>
@@ -41,6 +42,18 @@ export default function CreatePost() {
           </option>
           <option value="state">Countywide Issues</option> */}
         </Select>
+
+        <div className="flex gap-4 item-center justify-between border-4 border-purple-500 border-dotted p-3">
+          <FileInput type="file" accept="image/*" />
+          <Button
+            type="button"
+            size="sm"
+            className="bg-gradient-to-r from-blue-500 to-red-500"
+            outline
+          >
+            Upload image
+          </Button>
+        </div>
 
         <ReactQuill
           theme="snow"
@@ -51,6 +64,7 @@ export default function CreatePost() {
         <Button
           type="submit"
           className="bg-gradient-to-r from-blue-500 to-red-500"
+          outline
         >
           Publish
         </Button>
