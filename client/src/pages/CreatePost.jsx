@@ -131,7 +131,7 @@ export default function CreatePost() {
             setFormData({ ...formData, category: e.target.value })
           }
         >
-          <option value="">Please select a category</option>
+          <option value="">Please select a required category</option>
           <option value="state">Statewide Issues</option>
           <option value="nation">Nationwide Issues</option>
 
