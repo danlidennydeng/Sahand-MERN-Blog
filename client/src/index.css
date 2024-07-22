@@ -9,3 +9,9 @@ body {
 .ql-editor {
   font-size: 1.05rem;
 }
+
+.custom-focus:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(192, 38, 211, 0.5);
+  /* fuchsia-500 color, this is better especially in dark mood. However, default green color is still in the inner circle */
+}

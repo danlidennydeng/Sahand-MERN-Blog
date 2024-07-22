@@ -19,12 +19,17 @@ import {
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { app } from "../firebase.js";
+import { useNavigate } from "react-router-dom";
 
 export default function CreatePost() {
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({});
+  const [publishError, setPublishError] = useState(null);
+  const navigate = useNavigate();
+
+  // console.log(formData);
 
   const handleUploadImage = async () => {
     try {
@@ -65,12 +70,38 @@ export default function CreatePost() {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("/api/post/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setPublishError(data.message);
+        return;
+      }
+
+      if (res.ok) {
+        setPublishError(null);
+        navigate(`/post/${data.slug}`);
+      }
+    } catch (error) {
+      setPublishError("Something went wrong.");
+    }
+  };
+
   return (
     <div className="p-3 max-w-3xl mx-auto min-h-screen">
       <h1 className="text-center text-3xl my-7 font-semibold">
         Publish your political post...
       </h1>
-      <form className="flex flex-col gap-4">
+      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-4 sm:flex-row"></div>
         {/* <TextInput
           type="text"
@@ -81,15 +112,29 @@ export default function CreatePost() {
         /> */}
 
         <Textarea
-          id="post"
+          type="text"
+          id="title"
+          className="custom-focus"
+          //above color is not perfect.
+
+          // className="focus:outline-none focus:ring-fuchsia-500"
+          // above does not work very well
           placeholder="Required. Instead of a short title, please summarize your long article here...minimum 20, maximum 280 charators"
           required
           rows={6}
+          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
         />
-        <Select id="category" required>
-          {/* <option value="unscope">Select a category</option> */}
+        <Select
+          id="category"
+          required
+          onChange={(e) =>
+            setFormData({ ...formData, category: e.target.value })
+          }
+        >
+          <option value="">Please select a category</option>
           <option value="state">Statewide Issues</option>
           <option value="nation">Nationwide Issues</option>
+
           {/* <option value="state" disable={true}>
             Citywide Issues
           </option>
@@ -134,6 +179,9 @@ export default function CreatePost() {
           theme="snow"
           placeholder="Not required. Your long editorial here..."
           className="h-72 mb-12"
+          onChange={(value) => {
+            setFormData({ ...formData, content: value });
+          }}
         />
 
         <Button
@@ -143,6 +191,11 @@ export default function CreatePost() {
         >
           Publish
         </Button>
+        {publishError && (
+          <Alert className="mt-5 bg-purple-500 text-white dark:bg-purple-500 dark:text-white">
+            {publishError}
+          </Alert>
+        )}
       </form>
     </div>
   );
