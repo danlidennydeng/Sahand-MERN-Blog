@@ -156,3 +156,5 @@ search for "react circular progress bar"
 /Sahand-MERN-Blog$ npm i cookie-parser
 
 ~/Sahand-MERN-Blog/client$ npm install react-quill --save
+
+~/Sahand-MERN-Blog/client$ npm install --save-dev tailwind-scrollbar
