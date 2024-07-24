@@ -158,3 +158,9 @@ search for "react circular progress bar"
 ~/Sahand-MERN-Blog/client$ npm install react-quill --save
 
 ~/Sahand-MERN-Blog/client$ npm install --save-dev tailwind-scrollbar
+
+=========================================================
+
+After getposts in DashPosts.jsx, the sort date is not based on updateAt
+
+After you have deleted some posts, the show more button is still there even if all posts are less than 9.
