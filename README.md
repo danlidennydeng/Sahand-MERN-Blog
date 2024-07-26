@@ -161,6 +161,4 @@ search for "react circular progress bar"
 
 =========================================================
 
-After getposts in DashPosts.jsx, the sort date is not based on updateAt
-
-After you have deleted some posts, the show more button is still there even if all posts are less than 9.
+If all posts exactly equal to 9, you still got the "show more". tried <= 9, It worked when it is exactly 9, but if you have more than 9, then "show more" does not show.
