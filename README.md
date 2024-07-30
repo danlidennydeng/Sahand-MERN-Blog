@@ -162,3 +162,7 @@ search for "react circular progress bar"
 =========================================================
 
 If all posts exactly equal to 9, you still got the "show more". tried <= 9, It worked when it is exactly 9, but if you have more than 9, then "show more" does not show.
+
+========================================================
+
+After admin deletes a user, the deleted user is still there until you hit fresh button.
