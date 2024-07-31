@@ -15,3 +15,23 @@ body {
   box-shadow: 0 0 0 3px rgba(192, 38, 211, 0.5);
   /* fuchsia-500 color, this is better especially in dark mood. However, default green color is still in the inner circle */
 }
+
+/* .post-content p {
+  margin-bottom: 0.5rem;
+  color: black;
+} */
+
+.post-content a {
+  color: white;
+  background-color: green;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+  background-color: purple;
+  color: white;
+}
+
+/* .dark .post-content a {
+  color: red;
+} */
