@@ -22,7 +22,7 @@ export default function DashPosts() {
             setShowMore(false);
           }
         }
-        console.log(data);
+        // console.log(data);
       } catch (error) {
         console.log(error.message);
       }
@@ -85,20 +85,17 @@ export default function DashPosts() {
               <Table.HeadCell>Edit</Table.HeadCell>
             </Table.Head>
             {userPosts.map((post) => (
-              <Table.Body className="divide-y">
+              <Table.Body className="divide-y" key={post._id}>
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell>
                     {new Date(post.updatedAt).toLocaleDateString()}
                   </Table.Cell>
 
                   <Table.Cell>
-                    <Link to={`/post/${post.slub}`}>
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-20 h-10 object-cover bg-gray-500"
-                      />
-                    </Link>
+                    <img
+                      src={post.image}
+                      className="w-20 h-10 object-cover bg-gray-500 hover:w-40 hover:h-20"
+                    />
                   </Table.Cell>
 
                   <Table.Cell>

@@ -103,14 +103,7 @@ export default function CreatePost() {
       </h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-4 sm:flex-row"></div>
-        {/* <TextInput
-          type="text"
-          placeholder="Title"
-          required
-          id="title"
-          className="flex-1"
-        /> */}
-
+        
         <Textarea
           type="text"
           id="title"

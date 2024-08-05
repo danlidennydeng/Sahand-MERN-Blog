@@ -12,7 +12,7 @@ body {
 
 .custom-focus:focus {
   outline: none !important;
-  box-shadow: 0 0 0 3px rgba(192, 38, 211, 0.5);
+  box-shadow: 0 0 0 3px rgba(255, 0, 255, 1);
   /* fuchsia-500 color, this is better especially in dark mood. However, default green color is still in the inner circle */
 }
 
@@ -23,12 +23,17 @@ body {
 
 .post-content a {
   color: white;
-  background-color: green;
+  background-color: #7e22ce;
+
+  /* Fuchsia, #ff00ff, rgb(255, 0, 255) */
 }
 
 .post-content a:hover {
   text-decoration: underline;
-  background-color: purple;
+  background-color: #a855f7;
+
+  /* Purple, #800080, rgb(128, 0, 128) */
+
   color: white;
 }
 
