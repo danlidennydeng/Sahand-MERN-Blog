@@ -7,7 +7,9 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
----
+===========================================
+
+npm create vite@5.2.0
 
 bob@bob-vintage:~/Sahand-MERN-Blog/client$ npm i
 npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
@@ -164,5 +166,3 @@ search for "react circular progress bar"
 If all posts exactly equal to 9, you still got the "show more". tried <= 9, It worked when it is exactly 9, but if you have more than 9, then "show more" does not show.
 
 ========================================================
-
-After admin deletes a user, the deleted user is still there until you hit fresh button.
