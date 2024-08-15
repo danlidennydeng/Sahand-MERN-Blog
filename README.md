@@ -166,3 +166,5 @@ search for "react circular progress bar"
 If all posts exactly equal to 9, you still got the "show more". tried <= 9, It worked when it is exactly 9, but if you have more than 9, then "show more" does not show.
 
 ========================================================
+
+bob@bob-vintage:~/Sahand-MERN-Blog$ npm install -D @tailwindcss/line-clamp

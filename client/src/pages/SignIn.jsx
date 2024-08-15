@@ -103,8 +103,9 @@ export default function SignIn() {
               />
             </div>
             <Button
-              gradientDuoTone="purpleToPink"
+              outline
               type="submit"
+              className=""
               disable="loading"
               // disable={loading}
             >
