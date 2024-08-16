@@ -64,7 +64,7 @@ export default function Search() {
       setSidebarData({ ...sidebarData, sort: order });
     }
     if (e.target.id === "category") {
-      const category = e.target.value || "uncategorized";
+      const category = e.target.value || "";
       setSidebarData({ ...sidebarData, category });
     }
   };
@@ -130,10 +130,9 @@ export default function Search() {
               value={sidebarData.category}
               id="category"
             >
-              <option value="uncategorized">Uncategorized</option>
-              <option value="reactjs">React.js</option>
-              <option value="nextjs">Next.js</option>
-              <option value="javascript">JavaScript</option>
+              <option value="">Uncategorized</option>
+              <option value="nation">Nation</option>
+              <option value="state">State</option>
             </Select>
           </div>
           <Button type="submit" outline gradientDuoTone="purpleToPink">
