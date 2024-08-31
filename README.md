@@ -168,3 +168,11 @@ If all posts exactly equal to 9, you still got the "show more". tried <= 9, It w
 ========================================================
 
 bob@bob-vintage:~/Sahand-MERN-Blog$ npm install -D @tailwindcss/line-clamp
+
+===========================================================
+
+frontend is deployed by Amplify
+
+backend is deployed by AWS Elastic Beanstalk.
+
+CI/CD Codepipeline to Beanstalk.

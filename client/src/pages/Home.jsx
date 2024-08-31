@@ -6,22 +6,24 @@ import PostCard from "../components/PostCard";
 export default function Home() {
   const [posts, setPosts] = useState([]);
 
-  const apiUrl = import.meta.env.VITE_API_URL;
+  // const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch(`${apiUrl}/api/post/getPosts`);
+      // const res = await fetch(`${apiUrl}/api/post/getPosts`);
+      const res = await fetch("/api/post/getPosts");
       const data = await res.json();
       setPosts(data.posts);
     };
     fetchPosts();
   }, []);
+
   return (
     <div>
       <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto ">
         <h1 className="text-3xl font-bold lg:text-6xl">Welcome to my Blog</h1>
         <p className="text-gray-500 text-xs sm:text-sm">
-          <span className="text-purple-700">MAIN BRANCH 2</span> Here you'll
+          <span className="text-purple-700">MAIN BRANCH 2, pipeline to beanstalk</span> Here you'll
           find a variety of articles and tutorials on topics such as web
           development, software engineering, and programming languages.
         </p>

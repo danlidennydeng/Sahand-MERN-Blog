@@ -28,16 +28,41 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(
-  cors({
-    origin: process.env.FRONTENDURL,
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: process.env.FRONTENDURL,
+//     credentials: true,
+//   })
+// );
 
-app.listen(3000, () => {
-  console.log("server is running on port 3000!");
+const allowedOrigins = [
+  "http://localhost:5173", // Local development origin
+  "https://main.d18slomsbic04x.amplifyapp.com", // Deployed Amplify app origin
+];
+
+// CORS configuration
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow requests with no origin (e.g., mobile apps or curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
+
+const port = process.env.PORT || 3000; // Use the PORT environment variable or fallback to 3000 for local development
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}!`);
 });
+
+// app.listen(3000, () => {
+//   console.log("server is running on port 3000!");
+// });
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
@@ -52,4 +77,8 @@ app.use((err, req, res, next) => {
     statusCode,
     message,
   });
+});
+
+app.get("/", (req, res) => {
+  res.send("Hello, this is your Express server!");
 });
