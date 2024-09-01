@@ -36,6 +36,7 @@ app.use(cookieParser());
 // );
 
 const allowedOrigins = [
+  "174.50.139.119", //local IP address
   "http://localhost:5173", // Local development origin
   "https://main.d18slomsbic04x.amplifyapp.com", // Deployed Amplify app origin
 ];
