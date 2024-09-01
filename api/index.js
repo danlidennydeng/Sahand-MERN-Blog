@@ -81,5 +81,5 @@ app.use((err, req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Denny, this is your Express server! Is pipeline working?");
+  res.send("Is pipeline working?");
 });
